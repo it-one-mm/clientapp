@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.ads.InterstitialAd;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
@@ -27,12 +28,14 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.EpisodeH
     FragmentManager fm;
 
     private  RewardedVideoAd mRewardedVideoAd;
+
     public EpisodeAdapter(ArrayList<EpisodeModel> models, Context context, FragmentManager fm) {
         this.models = models;
         this.context = context;
         this.fm = fm;
         GoogleAds googleAds = new GoogleAds();
         this.mRewardedVideoAd = googleAds.loadRewaredVideoAds(context);
+
 
     }
 
@@ -56,6 +59,7 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.EpisodeH
                 if(mRewardedVideoAd.isLoaded())
                 {
                     mRewardedVideoAd.show();
+
                 }
                 EpisodeModel model = models.get(position);
                 MovieModel movieModel = new MovieModel();

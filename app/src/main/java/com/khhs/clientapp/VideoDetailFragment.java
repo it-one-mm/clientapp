@@ -120,7 +120,6 @@ public class VideoDetailFragment extends Fragment {
                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
                    DisplayMetrics displayMetrics = new DisplayMetrics();
                    getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                   int width = (int)(displayMetrics.widthPixels/getActivity().getResources().getDisplayMetrics().density);
 
                     int height = (int)(300*getContext().getResources().getDisplayMetrics().density);
                    RelativeLayout.LayoutParams params =(RelativeLayout.LayoutParams) playerView.getLayoutParams();
@@ -144,30 +143,16 @@ public class VideoDetailFragment extends Fragment {
                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                    DisplayMetrics displayMetrics = new DisplayMetrics();
                    getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                   //int height = (int)(displayMetrics.heightPixels/getResources().getDisplayMetrics().density)
-
-
-                 int height = (int)(displayMetrics.heightPixels/getResources().getDisplayMetrics().density);
-
-                   int width = (int)(displayMetrics.widthPixels/getActivity().getResources().getDisplayMetrics().density);
-
 
                    Point point = new Point();
                    getActivity().getWindowManager().getDefaultDisplay().getRealSize(point);
                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)playerView.getLayoutParams();
                    params.width = params.MATCH_PARENT;
                    params.height =point.y;
-
-
-
                    playerView.setLayoutParams(params);
                    playerContent.setLayoutParams(params);
-
-
                    MainActivity.toolbar.setVisibility(View.GONE);
                    isfullscreen=true;
-
-
 
                }
            }

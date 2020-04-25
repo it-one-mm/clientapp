@@ -28,6 +28,7 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.MovieHolde
     FragmentManager fm;
 
     private InterstitialAd interstitialAd;
+
     ArrayList<String> seriesIds = new ArrayList<>();
 
     public SeriesAdapter(ArrayList<SeriesModel> SeriesModels, final Context context, FragmentManager fm) {
@@ -36,6 +37,7 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.MovieHolde
         this.fm = fm;
        GoogleAds googleAds = new GoogleAds();
         interstitialAd = googleAds.loadInterstiialAds(context);
+
     }
 
     public SeriesAdapter(ArrayList<SeriesModel> seriesModels, final Context context, FragmentManager fm, ArrayList<String> seriesIds) {
@@ -45,6 +47,7 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.MovieHolde
         this.seriesIds = seriesIds;
         GoogleAds googleAds = new GoogleAds();
         interstitialAd = googleAds.loadInterstiialAds(context);
+
 
     }
 
@@ -69,6 +72,7 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.MovieHolde
                {
 
                    interstitialAd.show();
+
                    goToNext(position);
                    SeriesFragment.setHeader(SeriesModels.get(position).seriesName);
                }

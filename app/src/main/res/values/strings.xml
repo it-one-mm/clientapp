@@ -28,6 +28,8 @@
     <string name="native_unit_id">ca-app-pub-3940256099942544/2247696110</string>
     <string name="rewareded_id">ca-app-pub-3940256099942544/5224354917</string>
 
+    <string name="interstital_placement_id">816554502199389_816558352199004</string>
+
    <!-- //Real Ads
     <string name="app_id">ca-app-pub-1626642663383081~8071360006</string>
     <string name="banner_unit_id">ca-app-pub-1626642663383081/9986350553</string>

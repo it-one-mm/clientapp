@@ -26,6 +26,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
     Context context;
     FragmentManager fm;
 
+
     private InterstitialAd interstitialAd;
     public MovieAdapter(ArrayList<MovieModel> movieModels, Context context,FragmentManager fm) {
         this.movieModels = movieModels;
@@ -36,6 +37,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
         interstitialAd = googleAds.loadInterstiialAds(context);
 
 
+
     }public MovieAdapter(ArrayList<MovieModel> movieModels, Context context) {
         this.movieModels = movieModels;
         this.context = context;
@@ -43,6 +45,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
 
         GoogleAds googleAds = new GoogleAds();
         interstitialAd = googleAds.loadInterstiialAds(context);
+
 
 
     }
@@ -67,6 +70,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
                 if(interstitialAd.isLoaded())
                 {
                     interstitialAd.show();
+
                     goToNext(position);
 
                 }

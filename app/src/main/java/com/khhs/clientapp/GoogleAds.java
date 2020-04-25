@@ -10,6 +10,10 @@ import android.view.Display;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.InterstitialAdListener;
 import com.google.android.ads.nativetemplates.NativeTemplateStyle;
 import com.google.android.ads.nativetemplates.TemplateView;
 import com.google.android.gms.ads.AdListener;
@@ -26,10 +30,60 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 public class GoogleAds {
 
+
+    private com.facebook.ads.InterstitialAd interstitialAd;
+    public com.facebook.ads.InterstitialAd loadFAInterstitialAds(Context context)
+    {
+        AudienceNetworkAds.initialize(context);
+        interstitialAd = new com.facebook.ads.InterstitialAd(context,"816554502199389_816558352199004");
+        interstitialAd.setAdListener(new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+                // Interstitial ad displayed callback
+                Log.e(getClass().getName(), "Interstitial ad displayed.");
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+                // Interstitial dismissed callback
+                Log.e(getClass().getName(), "Interstitial ad dismissed.");
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                // Ad error callback
+                Log.e(getClass().getName(), "Interstitial ad failed to load: " + adError.getErrorMessage());
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(getClass().getName(), "Interstitial ad is loaded and ready to be displayed!");
+                // Show the ad
+                interstitialAd.show();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Ad clicked callback
+                Log.d(getClass().getName(), "Interstitial ad clicked!");
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Ad impression logged callback
+                Log.d(getClass().getName(), "Interstitial ad impression logged!");
+            }
+        });
+
+        return interstitialAd;
+    }
     private InterstitialAd mInterstitialAd;
     public InterstitialAd loadInterstiialAds(Context context)
     {
         MobileAds.initialize(context,context.getString(R.string.app_id));
+
+
         mInterstitialAd = new InterstitialAd(context);
         mInterstitialAd.setAdUnitId(context.getString(R.string.interstitial_unit_id));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
