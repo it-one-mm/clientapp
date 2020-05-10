@@ -287,7 +287,7 @@ public class FirebaseConnect {
     public void getEpBySeriesName(final String seriesName)
     {
         episodeRef.whereEqualTo("episodeSeries",seriesName)
-                .orderBy("createdAt")
+                .orderBy("createdAt", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {

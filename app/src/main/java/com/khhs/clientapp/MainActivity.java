@@ -324,4 +324,6 @@ getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
             VideoDetailFragment.player.setPlayWhenReady(true);
         }
     }
+
+
 }
