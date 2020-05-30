@@ -55,7 +55,7 @@
          <androidx.recyclerview.widget.RecyclerView
              android:layout_below="@id/txtmovie"
              android:layout_width="match_parent"
-             android:layout_height="@dimen/image_item_height"
+             android:layout_height="wrap_content"
              android:id="@+id/allmovie"/>
 
          <FrameLayout
@@ -74,7 +74,7 @@
          <androidx.recyclerview.widget.RecyclerView
              android:layout_below="@id/txtseries"
              android:layout_width="match_parent"
-             android:layout_height="@dimen/image_item_height"
+             android:layout_height="wrap_content"
              android:id="@+id/allseies"/>
 
          <FrameLayout

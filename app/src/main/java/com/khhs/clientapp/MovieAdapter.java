@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.AdListener;
@@ -64,6 +65,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
         Glide.with(context)
                 .load(movieModels.get(position).movieImage)
                 .into(holder.movieImage);
+        holder.title.setText(movieModels.get(position).movieName);
         holder.movieImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,10 +100,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
 
     public class MovieHolder extends RecyclerView.ViewHolder{
         ImageView movieImage;
+        TextView title;
 
         public MovieHolder(@NonNull View itemView) {
             super(itemView);
             movieImage = itemView.findViewById(R.id.image);
+            title = itemView.findViewById(R.id.title);
         }
     }
 

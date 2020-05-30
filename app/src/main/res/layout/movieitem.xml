@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="@dimen/image_item_width"
-    android:layout_height="@dimen/image_item_height"
-    android:layout_margin="@dimen/movie_item_margin"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/image_item_width"
-        android:layout_height="@dimen/image_item_height"
-        app:cardCornerRadius="@dimen/corner_radius">
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/sampleimage"/>
+
+<androidx.cardview.widget.CardView android:layout_width="@dimen/image_item_width"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_10"
+    android:elevation="@dimen/padding_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/corner_radius"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+          <ImageView
+              android:scaleType="fitXY"
+              android:id="@+id/image"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/image_item_height"
+              android:src="@drawable/sampleimage"/>
+          <TextView
+              android:id="@+id/title"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Movie Name Image Length"
+              android:padding="@dimen/padding_10"
+              android:textColor="@color/colorPrimary"/>
+      </LinearLayout>
     </androidx.cardview.widget.CardView>
-</LinearLayout>

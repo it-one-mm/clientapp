@@ -64,7 +64,7 @@ getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                     maindata.setVisibility(View.VISIBLE);
                 }
                 else {
-                    Toasty.error(getApplicationContext(),"နံပါတ်မှားနေပါသည်",Toasty.LENGTH_LONG).show();
+                    Toasty.error(getApplicationContext(),"Wrong PassCode!",Toasty.LENGTH_LONG).show();
                 }
             }
         });

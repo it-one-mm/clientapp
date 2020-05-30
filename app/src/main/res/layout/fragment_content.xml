@@ -8,7 +8,7 @@
         <recycler.coverflow.RecyclerCoverFlow
             android:id="@+id/list"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/image_item_height">
+            android:layout_height="200dp">
         </recycler.coverflow.RecyclerCoverFlow>
         <FrameLayout
             android:layout_width="match_parent"

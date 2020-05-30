@@ -128,8 +128,6 @@ public class VideoDetailFragment extends Fragment {
                     playerView.setLayoutParams(params);
                     playerContent.setLayoutParams(params);
                     isfullscreen=false;
-
-
                     MainActivity.toolbar.setVisibility(View.VISIBLE);
                }
                else
@@ -181,7 +179,8 @@ public class VideoDetailFragment extends Fragment {
 
                         try {
                             JSONObject object = response.getJSONObject(0);
-                            DefaultHttpDataSourceFactory httpDataSourceFactory = new DefaultHttpDataSourceFactory("exoplayer");
+                            DefaultHttpDataSourceFactory httpDataSourceFactory =
+                                    new DefaultHttpDataSourceFactory("exoplayer");
                             progressBar = myView.findViewById(R.id.progressbar);
                             ExtractorsFactory factory  = new DefaultExtractorsFactory();
                             try {
@@ -191,7 +190,10 @@ public class VideoDetailFragment extends Fragment {
                                     url = arr[0] + "s:" + arr[1];
 
                                 }
-                                MediaSource source = new ExtractorMediaSource(Uri.parse(url), httpDataSourceFactory, factory, null, null);
+                                MediaSource source = new ExtractorMediaSource(Uri.parse(url),
+                                        httpDataSourceFactory,
+                                        factory, null,
+                                        null);
                                 player.prepare(source);
                                 link = url;
                                 playerView.setPlayer(player);
